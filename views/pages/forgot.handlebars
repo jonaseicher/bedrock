@@ -1,0 +1,40 @@
+{{setTitle "Forgot Password"}}
+
+
+
+<div class="ui container" style="margin-top: 100px;">
+    <div class="ui center aligned grid">
+        <div class="doubling two column row">
+            <div class="left aligned column">
+                <div class="ui very padded left aligned segment">
+                    {{> flash}}
+
+                    <h1 class="ui header">
+                        Forgot Password
+                        <div class="sub header">
+                            Enter your email address below and we'll send you instructions to reset your password.
+                        </div>
+                    </h1>
+
+                    <div class="ui divider"></div>
+                    <div class="ui info message">
+                        <strong>Note:</strong> Emails won't be sent by Bedrock until you tell the Bedrock server <em>how</em> to send emails. It's easy to set up, and you can read how to do it over in this tutorial: <a href="http://nodewebapps.com/2016/12/21/how-to-send-emails-in-sails-bedrock/">How to send emails in Bedrock</a>.
+                    </div>
+                    <form class="form-signin ui form" role="form" method="POST" action="/forgot">
+                        <div class="field">
+                            <label for="email">Email Address</label>
+                            <input type="email" name="email" class="form-control" placeholder="john.smith@me.com" required autofocus>
+                            <input type="hidden" name="_csrf" value="{{_csrf}}">
+                        </div>
+                        <button class="ui primary button" type="submit">Reset Password</button>
+                        <div class="ui section divider"></div>
+                        <p class="text-right">
+                            <small>Have an account and remember your password? <a href="/login">Login instead</a>.
+                        </p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
